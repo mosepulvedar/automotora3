@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automotora</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="{% static 'core/js/inicializacion.js' %}"></script>
+</head>
+<body>
+    <header>
+        <img class="logo" src="{% static 'core/img/automovillogo.jpg' %}" alt="logo de la pagina">
+        <ul class="navegacion">
+            <li>
+                <!--para abrir enlace en otra pestaña target="_blank"-->
+                <a href="{% url 'home' %}" >Home</a>
+            </li>
+            <li>
+                <a href="#">Contacto</a>
+            </li>
+            <li>
+                <a href="#">Historia</a>
+            </li>
+            <li>
+                <a href="{% url 'galeria' %}">Galeria</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+
+            <li>
+                <a href="{% url 'login' %}">Login</a>
+            </li>
+
+            {% endif %}
+        </ul>
+    </header>
+    <div class="landing">
+        <div class="slider">
+            <div>
+                <img title="Imagen de un auto gris" class="imagen_landing" src="{% static 'core/img/automovil.png' %}" alt="imagen de un automovil">
+            </div>
+            <div>
+                <img title="Imagen de un auto rojo" class="imagen_landing" src="{% static 'core/img/auto2.png' %}" alt="imagen de un automovil">
+            </div>
+            <div>
+                <img class="imagen_landing" title="Imagen de un auto blanco" src="{% static 'core/img/auto3.png' %}" alt="imagen de un automovil">
+            </div>
+        </div>
+        <h2 class="eslogan">La mejor automotora del pais</h2>
+
+        <ul class="redes_sociales">
+            <li><img src="{% static 'core/img/social-twitter.png' %}" alt="twitter"></li>
+            <li><img src="{% static 'core/img/socialfacebook.png' %}" alt="facebook"></li>
+            <li><img src="{% static 'core/img/social-inst.png' %}" alt="instagram"></li>
+        </ul>
+    </div>
+    <div class="contenido">
+       {% block contenido %}
+       
+       {% endblock contenido %}
+    </div>
+
+    <footer>
+        <br>
+        <br>
+        <br>
+        <h3 class="color_blanco centrar_texto">Todos los derechos reservados</h3>
+        <hr>
+        <h3 class="color_blanco centrar_texto">2018</h3>
+    </footer>
+</body>
+</html>

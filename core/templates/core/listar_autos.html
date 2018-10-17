@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+
+{% block contenido %}
+
+<h2>Listado de automoviles</h2>
+
+
+<table>
+
+    <tr>
+        <th>Patente</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th>Opciones</th>
+    </tr>
+
+    {% for a in autos %}
+
+    <tr>
+        <td>{{ a.patente }}</td>
+        <td>{{ a.marca.nombre }}</td>
+        <td>{{ a.modelo }}</td>
+        <td>{{ a.anio }}</td>
+        <td>
+            <a href="{% url 'eliminar_auto' a.id %}">Eliminar</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<!--Primero preguntamos si es que existen mensaje que imprimir-->
+{% if messages %}
+
+    <!--si hay mensaje los imprimimos uno por uno-->
+
+    {% for m in messages %}
+    <h3>{{ m }}</h3>
+    {% endfor %}
+
+{% endif %}
+
+
+{% endblock contenido %}
