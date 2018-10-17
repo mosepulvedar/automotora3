@@ -10,6 +10,8 @@ from django.contrib.auth.decorators import login_required
 #primero la autenticacion al usuario para ingresar a un
 #view
 
+#comentario
+
 def home(request):
     return render(request, 'core/home.html')
 
