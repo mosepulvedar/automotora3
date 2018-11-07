@@ -1,0 +1,19 @@
+{% extends "accounts/auth_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+
+<h2>Cambiar password</h2>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{ form | crispy }}
+
+    <input type="submit" value="Guardar cambios" class="btn btn-success">
+
+</form>
+{{ mensaje }}
+
+{% endblock contenido %}

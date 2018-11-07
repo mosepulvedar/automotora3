@@ -6,7 +6,7 @@
 <h2>Listado de automoviles</h2>
 
 
-<table>
+<table id="tablaAutos">
 
     <tr>
         <th>Patente</th>
@@ -16,20 +16,7 @@
         <th>Opciones</th>
     </tr>
 
-    {% for a in autos %}
-
-    <tr>
-        <td>{{ a.patente }}</td>
-        <td>{{ a.marca.nombre }}</td>
-        <td>{{ a.modelo }}</td>
-        <td>{{ a.anio }}</td>
-        <td>
-            <a href="{% url 'eliminar_auto' a.id %}">Eliminar</a>
-        </td>
-    </tr>
-
-    {% endfor %}
-
+    
 </table>
 
 <!--Primero preguntamos si es que existen mensaje que imprimir-->

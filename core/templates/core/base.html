@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-
-
 <!--asdfasd-->
 
 <html lang="en">
@@ -14,10 +11,19 @@
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="manifest" href="{% static 'core/manifest.json' %}">
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <link rel="icon" href="{% static 'core/img/escarabajo.png' %}">
+    <script src="{% static 'core/js/conexion.js' %}"></script>
+    <script src="{% static 'core/js/DAOAutomovil.js' %}"></script>
+    <script src="{% static 'core/js/SyncAuto.js' %}"></script>
+
     <script src="{% static 'core/js/inicializacion.js' %}"></script>
+    <script src="{% static 'core/js/register.js' %}"></script>
+    <script src="{% static 'core/js/app.js' %}"></script>
 </head>
 <body>
     <header>
@@ -45,6 +51,7 @@
             <li>
                 <a href="{% url 'login' %}">Login</a>
             </li>
+            <li><a href="{% url 'register' %}">Registro</a></li>
 
             {% endif %}
         </ul>
@@ -83,5 +90,8 @@
         <hr>
         <h3 class="color_blanco centrar_texto">2018</h3>
     </footer>
+    <div id="estado_web" class="estado_web">
+        trabajando offline...
+    </div>
 </body>
 </html>

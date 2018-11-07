@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-<body>
+{% extends "accounts/auth_base.html" %}
     
-    <h1>Ingrese sus credenciales</h1>
+{% load crispy_forms_tags %}
 
-    <form action="" method="post">
+{% block contenido %}
+
+<h1>Ingrese sus credenciales</h1>
+
+<form action="" method="post">
 
         {% csrf_token %}
-
+        
         <table>
-            {{ form.as_table }}
+            {{ form | crispy }}
         </table>
 
-        <input type="submit" value="Login">
-
+        <input type="submit" value="Login" class="btn btn-success">
+        
     </form>
-
-</body>
-</html>
+    <hr>
+    <a href="{% url 'register' %}">Registrar usuario</a>
+{% endblock contenido %}

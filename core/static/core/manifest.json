@@ -1,0 +1,23 @@
+{
+    "name": "Mi aplicación PWA",
+    "short_name": "Mi PWA",
+    "lang": "es-ES",
+    "start_url": "/",
+    "background_color": "#2C3E50",
+    "theme_color": "#18BC9C",
+    "display": "standalone",
+    "icons": [
+        {
+         "src": "/static/core/img/auto2.png",
+         "sizes": "36x36",
+         "type": "image/png",
+         "density": "0.75"
+        },
+        {
+            "src": "/static/core/img/auto2.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "density": "0.75"
+           }
+    ]
+}
